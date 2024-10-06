@@ -74,6 +74,8 @@ COPY . /app/api/
 COPY docker/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
+# Copy credentials
+COPY ./aws_credentials /app/api/credentials
 
 ARG COMMIT_SHA
 ENV COMMIT_SHA=${COMMIT_SHA}

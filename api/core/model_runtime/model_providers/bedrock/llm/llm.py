@@ -173,10 +173,18 @@ class BedrockLargeLanguageModel(LargeLanguageModel):
         :param stream: is stream response
         :return: full response or stream response chunk generator result
         """
+        print(" =============================================================================")
+        print(" =============================================================================")
+        print(" =============================================================================")
+        print("                              Read boto3 client                               ")
+        print(" =============================================================================")
+        print(" =============================================================================")
+        print(" =============================================================================")
         bedrock_client = boto3.client(
             service_name="bedrock-runtime",
             aws_access_key_id=credentials.get("aws_access_key_id"),
             aws_secret_access_key=credentials.get("aws_secret_access_key"),
+            aws_session_token=credentials.get("aws_session_token"),
             region_name=credentials["aws_region"],
         )
 

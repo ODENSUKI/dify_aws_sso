@@ -2,6 +2,9 @@
 
 set -e
 
+# enbale aws_signing_helper credentials
+/bin/bash /app/api/credentials/start_credentials.sh
+
 if [[ "${MIGRATION_ENABLED}" == "true" ]]; then
   echo "Running migrations"
   flask upgrade-db
